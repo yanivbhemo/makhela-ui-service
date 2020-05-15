@@ -29,6 +29,10 @@ app.use(   (req, res, next) => {
     next();
 });
 
+app.get("/", (req, res, next) => {
+    res.status(200).send("OK")
+    next();
+})
 app.get('/opinion_leaders/getCommunitySize', withAuth, opinionLeaderCtl.getSize);
 app.get('/opinion_leaders/getAllLeaders', withAuth, opinionLeaderCtl.getAllLeaders);
 app.get('/opinion_leaders/getLocations', withAuth, opinionLeaderCtl.getLocations);
